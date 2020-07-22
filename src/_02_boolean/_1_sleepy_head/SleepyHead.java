@@ -1,5 +1,7 @@
 package _02_boolean._1_sleepy_head;
 
+import java.awt.Color;
+
 import javax.swing.JOptionPane;
 import org.jointheleague.graphical.robot.Robot;
 
@@ -72,24 +74,28 @@ public class SleepyHead {
 		
 		/***********************   RED SQUARE  ********************/
 		
-		boolean isRed;
+		boolean isRed = false;
 		// Ask the user what color to draw with. Based on their answer, set the isRed variable
 		String color=JOptionPane.showInputDialog("what color do you want to draw with ");
 		 if (color.equals("red")) {
 			 isRed=true;
 		 }
-		boolean isSquare;		
+		boolean isSquare = false;		
 		// Now ask the user what shape to draw. Based on their answer, set the isSquare variable
 		String shape=JOptionPane.showInputDialog("what shape do you want to draw ");
 		if (shape.equals("square")) {
-			isSquare=false;
+			isSquare=true;
 		}
 		// Now you MUST use the && operator to join the booleans for this code. 
 		// Ask your teacher if you are not sure how
 		// Use an if statement to ONLY draw a red square when it has been requested (use the method below)
 		// otherwise, tell the user you don't know how to draw that shape
 		
-		
+		if(isRed && isSquare) {
+			drawRedSquare();
+		}else {
+			JOptionPane.showMessageDialog(null, "I dont know how to draw that");
+		}
 
 	}
 
@@ -98,9 +104,10 @@ public class SleepyHead {
 	static void drawRedSquare() {
 		Robot rob = new Robot();
 		// Complete the rest of this method
+		rob.miniaturize();
 		rob.penDown();;
 		rob.setSpeed(10);
-		rob.setPenColor(10, 0, 0);
+		rob.setPenColor(Color.RED);
 		rob.move(50);
 		rob.turn(90);
 		rob.move(50);
