@@ -1,9 +1,7 @@
-/*
-import ddf.minim.*;
-Minim minim = new Minim(this); 
-AudioSample doh;
-AudioSample woohoo;
-*/
+
+
+int num=245;
+int wal=273;
 
 void setup() {
   
@@ -13,37 +11,24 @@ void setup() {
   size(440, 440); // Change this to match the size of your waldo picture
   image(waldo, 0, 0);
 
-  /*
-    doh = minim.loadSample("homer-doh.wav"); 
-    woohoo = minim.loadSample("homer-woohoo.wav"); 
-  */
+  
+
+    
+  
 }
 
 void draw() {
       // Use this print statement to find out the coordinates of Waldo when you press the mouse
       // println("X: " + mouseX + " Y: " + mouseY); 
 
+
       // If the mouse is on Waldo, print “Waldo found!”
 
-/**********  Now to add the sounds. You will need to uncomment all the code and import the Minim library ********/
-
-      // If Waldo is found, also use a method below to play “Woohoo”
-      // Change the name of the sound file if you need to 
-      
-      // If the mouse is pressed and they’re not on Waldo, play “Doh”
-      // Change the name of the sound file if you need to 
-      
+if(mouseX>237&&mouseY<325&&mouseX>266&&mouseY<280){
+ 
+  if(mousePressed){
+    println(mouseX + " " + mouseY);
+  System.out.print("Waldo found");
+  }
 }
-/*********************  Use the methods below, DON'T CHANGE THE CODE *********************/
-
-/*
-void playWoohoo() {
-     woohoo.stop();
-     woohoo.trigger();
 }
-
-void playDoh() {
-     doh.stop();
-     doh.trigger();
-}
-*/
